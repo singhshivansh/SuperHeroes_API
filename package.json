@@ -1,15 +1,16 @@
 {
-  "name": "superheroes-api",
+  "name": "superheroes",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Shivansh",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "request": "^2.88.2"
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.13"
   }
 }
