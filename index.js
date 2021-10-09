@@ -22,43 +22,57 @@ app.get('/', (req, res)=>{
 
 //get MARVEL movie API
 app.get('/get_marvel_movie', (req, res)=>{
-    const body = req.query;
-    const movie_name    = body.movie_name;
-    const actor_name    = body.actor_name;
-    let film = mar;
-    if (movie_name)
-        film = film.filter(e=>{
-            if(e.name)
-                return e.name.toLowerCase().includes(movie_name.toLowerCase())
-        });
-    if (actor_name)
-        film = film.filter(e=>{
-            if(e.stars[0])
-                return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
-        });
-    res.end(JSON.stringify(film));
+    try {
+        const body = req.query;
+        const movie_name    = body.movie_name;
+        const actor_name    = body.actor_name;
+        let film = mar;
+        if (movie_name)
+            film = film.filter(e=>{
+                if(e.name)
+                    return e.name.toLowerCase().includes(movie_name.toLowerCase())
+            });
+        if (actor_name)
+            film = film.filter(e=>{
+                if(e.stars[0])
+                    return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
+            });
+        
+        if (film.length == 0)
+            res.send({"status" : "Sorry, we find nothing for you :("})
+        else
+            res.send(JSON.stringify(film));
+    } catch (error) {
+        res.send({"error" : error.message});
+    }
 })
 
 //get DC movie API
 app.get('/get_dc_movie', (req, res)=>{
-    const body = req.query;
-    const movie_name = body.movie_name;
-    const actor_name = body.actor_name;
+    try {
+        const body = req.query;
+        const movie_name = body.movie_name;
+        const actor_name = body.actor_name;
 
-    let film = dc;
-    if(movie_name)
-        film = film.filter(e=>{
-            if(e.name)
-                return e.name.toLowerCase().includes(movie_name.toLowerCase())
-        });
-
-    if (actor_name)
-        film = film.filter(e=>{
-            if(e.stars[0])
-                return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
-        });
-
-    res.send(JSON.stringify(film));
+        let film = dc;
+        if(movie_name)
+            film = film.filter(e=>{
+                if(e.name)
+                    return e.name.toLowerCase().includes(movie_name.toLowerCase())
+            });
+        if (actor_name)
+            film = film.filter(e=>{
+                if(e.stars[0])
+                    return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
+            });
+        
+        if (film.length == 0)
+            res.send({"status" : "Sorry, we find nothing for you :("})
+        else
+            res.send(JSON.stringify(film));
+    } catch (error) {
+        res.send({"error" : error.message});
+    }
 })
 
 
