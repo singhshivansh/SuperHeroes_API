@@ -1,7 +1,7 @@
 const express   = require('express');
 const path      = require('path');
 const app       = express();
-const port      = 3000;
+const port      = process.env.POST || 3000;
 const fs        = require('fs');
 const mar       = require('./Marvel/All Marvel Movies.json');
 const _         = require('lodash');
@@ -15,7 +15,7 @@ fs.readFile(marvel_file, 'utf8', (err, data)=>{
 })
 
 app.get('/', (req, res)=>{
-    res.end('Welcome to this wonderful API!');
+    res.send('Welcome to this wonderful API!');
 })
 
 app.get('/get_marvel_movie', (req, res)=>{
