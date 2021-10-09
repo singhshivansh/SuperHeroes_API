@@ -1,7 +1,7 @@
 const express   = require('express');
 const path      = require('path');
 const app       = express();
-const port      = process.env.POST || 3000;
+const port      = process.env.PORT || 3000;
 const fs        = require('fs');
 const mar       = require('./Marvel/All Marvel Movies.json');
 const _         = require('lodash');
@@ -31,6 +31,6 @@ app.get('/get_marvel_movie', (req, res)=>{
 })
 
 
-app.listen(port, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log(`Server Started at ${port}`);
 })
