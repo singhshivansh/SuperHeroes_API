@@ -14,6 +14,10 @@ fs.readFile(marvel_file, 'utf8', (err, data)=>{
     marvel_json = JSON.parse(data);
 })
 
+app.get('/', (req, res)=>{
+    res.end('Welcome to this wonderful API!');
+})
+
 app.get('/get_marvel_movie', (req, res)=>{
     const body = req.query;
     const movie_name    = body.movie_name;
