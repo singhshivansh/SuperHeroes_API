@@ -15,7 +15,7 @@ fs.readFile(marvel_file, 'utf8', (err, data)=>{
 })
 
 app.get('/', (req, res)=>{
-    res.send('Welcome to this wonderful API!');
+    res.send('Welcome to this wonderful API! By  : Shivansh <3 ');
 })
 
 app.get('/get_marvel_movie', (req, res)=>{
