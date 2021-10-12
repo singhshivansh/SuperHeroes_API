@@ -1,7 +1,7 @@
 {
   "name": "superheroes",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000S\u0000u\u0000p\u0000e\u0000r\u0000H\u0000e\u0000r\u0000o\u0000e\u0000s\u0000_\u0000A\u0000P\u0000I\u0000\r\u0000 \u0000",
   "main": "main.js",
   "scripts": {
     "start": "node index.js",
@@ -10,8 +10,19 @@
   "author": "Shivansh",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
-    "nodemon": "^2.0.13"
-  }
+    "nodemon": "^2.0.13",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhshivansh/SuperHeroes_API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/singhshivansh/SuperHeroes_API/issues"
+  },
+  "homepage": "https://github.com/singhshivansh/SuperHeroes_API#readme"
 }
