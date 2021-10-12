@@ -6,6 +6,7 @@ const fs        = require('fs');
 const mar       = require('./Marvel/All Marvel Movies.json');   // MARVEL JSON file
 const dc        = require('./DC/All DC Movies.json');           // DC JSON file
 const _         = require('lodash');
+const { re } = require('semver');
 
 let marvel_json;
 
@@ -16,7 +17,19 @@ fs.readFile(marvel_file, 'utf8', (err, data)=>{
 })
 
 app.get('/', (req, res)=>{
-    res.send('Welcome to this wonderful API! By  : Shivansh <3 ');
+    res.sendFile(path.join(__dirname+'/index.html'));
+    // res.writeHead(200, {'Content-Type': 'text/plain'})
+    // fs.readFile('./index.html', function(err, data){
+    //     if(err){
+    //         res.write('File not Found!');
+    //     }else{
+    //         res.write(data);
+    //     }
+    //     res.end();
+    // })
+    // res.end();
+    // res.render('index.html');
+    // res.send('Welcome to this wonderful API! By  : Shivansh <3 ');
 })
 
 

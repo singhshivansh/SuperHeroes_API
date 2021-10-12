@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>SuperHero World</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    body{
+        font-family: 'Kanit', sans-serif;
+    }
+</style>
+
+<body>
+    <div class="bg-gray-300 flex py-5 justify-center">
+        <a class="text-5xl text-blue-600 font-semibold" href="/">SuperHero World! <small class="text-xl text-red-500 leading-10"><i>(A Free API for all Superhero Lovers)</i></small></a>
+    </div> 
+
+    <div class="flex justify-center my-3">
+        <ul class="w-2/4 rounded-xl flex justify-around bg-gray-800 py-2">
+            <li class="text-xl bg-gray-400 py-2 px-10 font-bold text-gray-700 rounded-xl cursor-pointer " id="movie_button" >Movie</li>
+            <li class="text-xl bg-gray-400 py-2 px-10 font-bold text-gray-700 rounded-xl cursor-pointer" id="character_button">Characters</li>
+        </ul>
+    </div>
+
+    <div class="h-full w-100 bg-gray-500 mx-10 rounded-xl" id="movie_tab">
+        <h3 class="text-4xl text-gray-700 w-100 flex justify-center font-semibold">Movie API</h3>
+        <div class="py-2 px-3 my-3 bg-red-500 mx-5 rounded">
+            <h5 class="text-2xl font-bold ">Marvel</h5>
+        </div>
+        <div class="py-2 px-3 bg-blue-500 mx-5 rounded">
+            <h5 class="text-2xl font-bold ">DC</h5>
+        </div>
+    </div>
+
+    <div class="h-full w-100 bg-gray-500 mx-10 rounded-xl" id="character_tab" style="display: none;">
+        <p>Character API</p>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $("#movie_button").click(()=>{
+        $("#movie_tab").show(500);
+        $("#character_tab").hide(500);
+    })
+
+    $("#character_button").click(()=>{
+        $("#movie_tab").hide(500);
+        $("#character_tab").show(500);
+    })
+
+</script>
+
+</html>
