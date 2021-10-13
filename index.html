@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>SuperHero World</title>
+    <link rel="icon" id="favicon" href="" type="image/gif" sizes="32x32">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,21 +27,21 @@
         </ul>
     </div>
 
-    <div class="h-auto w-100 bg-gray-500 mx-10 my-10 pb-10 rounded-xl" id="movie_tab">
+    <div class="h-auto w-100 bg-gray-400 mx-10 my-10 pb-10 rounded-xl" id="movie_tab">
         <h3 class="text-4xl text-gray-700 w-100 flex justify-center font-semibold">Movie API</h3>
         <div class="flex justify-around">
             <div class="py-2 px-3 my-3 w-5/12 bg-red-500 mx-5 rounded flex justify-between">
                 <h5 class="text-2xl font-bold text-white ">Marvel</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="marvel_movie_button"></i></h5>
             </div>
-            <div class="py-2 px-3 my-3 w-5/12 bg-blue-500 mx-5 rounded flex justify-between">
+            <div class="py-2 px-3 my-3 w-5/12 bg-blue-600 mx-5 rounded flex justify-between">
                 <h5 class="text-2xl font-bold text-white ">DC</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="dc_movie_button"></i></h5>
             </div>
         </div>
 
         <div class="flex justify-center mt-5" id="marvel_movie">
-            <div class="h-2/3 w-11/12 flex from-red-700 bg-gradient-to-b rounded-xl  py-5 justify-center ">
+            <div class="h-2/3 w-11/12 flex from-red-600 bg-gradient-to-b rounded-xl  py-5 justify-center ">
                 <table class="w-full mx-5 border-2 text-xl">
                     <thead>
                       <tr class="text-white"> 
@@ -88,24 +89,24 @@
         </div>
 
         <div class="flex justify-center mt-5 " id="dc_movie" style="display: none;">
-            <div class="h-2/3 w-11/12 flex from-blue-800 bg-gradient-to-b  py-5 justify-center ">
+            <div class="h-2/3 w-11/12 flex from-blue-700 bg-gradient-to-b  py-5 justify-center ">
                 <table class="w-full mx-5 border-2 text-xl">
                     <thead>
-                      <tr class="text-white"> 
+                    <tr class="text-white"> 
                         <th class="w-2/4 px-4 py-2">API</th>
                         <th class="w-1/4 px-4 py-2">Description</th>
                         <th class="w-1/4 px-4 py-2">Example</th>
-                      </tr>
+                    </tr>
                     </thead>
                     <tbody>
-                      <tr class="text-white bg-blue-500">
+                    <tr class="text-white bg-blue-500">
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/</td>
                         <td class="border px-4 py-2">Returns All DC Movies</td>
                         <td class="border px-4 py-2">
                             <a href="https://superhero-world.herokuapp.com/get_dc_movie/" target="_blank" rel="noopener noreferrer">Click Here!</a>
                         </td>
-                      </tr>
-                      <tr class="bg-blue-200">
+                    </tr>
+                    <tr class="bg-blue-200">
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=batman</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Movie Name Query</b></td>
                         <td class="border px-4 py-2">
@@ -113,8 +114,8 @@
                             <br>
                             <a target="_blank" href="https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=man of steel">Click Here ('man of steel') </a>
                         </td>
-                      </tr>
-                      <tr class="text-white bg-blue-500">
+                    </tr>
+                    <tr class="text-white bg-blue-500">
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?actor_name=gal</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Actor Name Query</b></td>
                         <td class="border px-4 py-2">
@@ -122,17 +123,23 @@
                             <br>
                             <a target="_blank" href="https://superhero-world.herokuapp.com/get_dc_movie/?actor_name=heath">Click Here ('heath') </a>
                         </td>
-                      </tr>
-                      <tr class="bg-blue-200">
+                    </tr>
+                    <tr class="bg-blue-200">
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=aquaman&actor_name=jason</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Movie Name Query</b> AND <b>Actor Name Query</b> </td>
                         <td class="border px-4 py-2">
                             <a target="_blank" href="https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=aquaman&actor_name=jason">Click Here </a>
                         </td>
-                      </tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5 class="text-sm text-red-700 font-semibold">* Also Includes the Animated Universe</h5>
+                        </td>
+                    </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
+            
         </div>
     </div>
 
@@ -246,8 +253,34 @@
         // console.log(marvel_movie_button.toggleClass)
     }
 
-    $(document).ready();
 
 </script>
+
+
+<!-- selecting random favicon -->
+<script>
+    function get_random(list){
+        return list[Math.floor((Math.random()*list.length))];
+    }
+    const a = [
+        'https://cdn0.iconfinder.com/data/icons/superhero-2/256/Ironman-512.png',
+        'https://cdn1.iconfinder.com/data/icons/social-media-logos-7/64/superman-512.png',
+        'https://cdn0.iconfinder.com/data/icons/superhero-2/256/Batman-512.png',
+        'https://cdn0.iconfinder.com/data/icons/superhero-2/256/Spiderman-512.png',
+        'https://cdn0.iconfinder.com/data/icons/superhero-2/256/Flash-512.png',
+        'https://cdn0.iconfinder.com/data/icons/superhero-2/256/Wonder_Woman-512.png',
+        'https://cdn4.iconfinder.com/data/icons/super-hero/154/capitan-america-shield-guard-man-super-hero-512.png',
+        'https://cdn0.iconfinder.com/data/icons/famous-character-vol-1-colored/48/JD-24-512.png',
+        'https://cdn0.iconfinder.com/data/icons/famous-character-vol-1-colored/48/JD-15-512.png'
+    ];
+    var favicon = $("#favicon");
+
+    $(document).ready(()=>{
+        favicon.attr('href', get_random(a));
+    })
+
+
+</script>
+
 
 </html>
