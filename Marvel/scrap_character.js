@@ -89,11 +89,11 @@ function make_JSON(movie_json, name){
     if(fs.existsSync(filePath)){
         const fileData = fs.readFileSync(filePath);
         let jsonData = JSON.parse(fileData);
-        const json_ = require('./All Marvel Characters.json');
-        if (json_.filter(e=>e.Name === name).length > 0){
-            console.log(json_.filter(e=>e.Name === name));
+        if (jsonData.filter(e=>e.Name === name).length > 0){
+            console.log(jsonData.filter(e=>e.Name === name));
             return
         }
+        jsonData.push(movie_json);
         const strngifyData = JSON.stringify(jsonData);
 
         fs.writeFileSync(filePath, strngifyData);
