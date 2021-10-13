@@ -3,33 +3,18 @@ const path      = require('path');
 const app       = express();
 const port      = process.env.PORT || 3000;
 const fs        = require('fs');
-const mar       = require('./Marvel/All Marvel Movies.json');   // MARVEL JSON file
-const dc        = require('./DC/All DC Movies.json');           // DC JSON file
+
+const mar       = require('./Marvel/All Marvel Movies.json');               // MARVEL JSON file
+const dc        = require('./DC/All DC Movies.json');                       // DC JSON file
+
+const marvel_characters = require('./Marvel/All Marvel Characters.json');   //MARVEL Characters File
+const dc_characters     = require('./DC/All DC Characters.json');           //DC Characters File
 const _         = require('lodash');
-const { re } = require('semver');
+const { re }    = require('semver');
 
-let marvel_json;
-
-let marvel_file = path.join(__dirname, 'All Marvel Movies.json');
-// const obj = JSON.parse(fs.readFileSync(marvel_file));
-fs.readFile(marvel_file, 'utf8', (err, data)=>{
-    marvel_json = JSON.parse(data);
-})
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname+'/index.html'));
-    // res.writeHead(200, {'Content-Type': 'text/plain'})
-    // fs.readFile('./index.html', function(err, data){
-    //     if(err){
-    //         res.write('File not Found!');
-    //     }else{
-    //         res.write(data);
-    //     }
-    //     res.end();
-    // })
-    // res.end();
-    // res.render('index.html');
-    // res.send('Welcome to this wonderful API! By  : Shivansh <3 ');
 })
 
 
@@ -85,6 +70,72 @@ app.get('/get_dc_movie', (req, res)=>{
             res.send(JSON.stringify(film));
     } catch (error) {
         res.send({"error" : error.message});
+    }
+})
+
+//get Marvel Character API
+app.get('/get_marvel_character', (req, res)=>{
+    try {
+        const body = req.query;
+        const name = body.name;
+        const name_contain = body.name_contain;
+
+        let chars = marvel_characters;
+
+        if (name_contain){
+            chars = chars.filter(e=>{
+                if(e.Name){
+                    return e.Name.toLowerCase().includes(name_contain.toLowerCase())
+                }
+            })
+        }
+
+        if (name){
+            chars = chars.filter(e=>{
+                if(e.Name){
+                    return e.Name.toLowerCase() == (name.toLowerCase())
+                }
+            })
+        }
+        if (chars.length == 0)
+            res.send({"status" : "Sorry, we find nothing for you :("})
+        else
+            res.send(chars);
+    } catch (error) {
+        res.send({"error" : error})
+    }
+})
+
+//get Marvel Character API
+app.get('/get_dc_character', (req, res)=>{
+    try {
+        const body = req.query;
+        const name = body.name;
+        const name_contain  = body.name_contain
+
+        let chars = dc_characters;
+
+        if (name_contain){
+            chars = chars.filter(e=>{
+                if(e.Name){
+                    return e.Name.toLowerCase().includes(name_contain.toLowerCase())
+                }
+            })
+        }
+
+        if (name){
+            chars = chars.filter(e=>{
+                if(e.Name){
+                    return e.Name.toLowerCase() == (name.toLowerCase())
+                }
+            })
+        }
+        if (chars.length == 0)
+            res.send({"status" : "Sorry, we find nothing for you :("})
+        else
+            res.send(chars);
+    } catch (error) {
+        res.send({"error" : error})
     }
 })
 

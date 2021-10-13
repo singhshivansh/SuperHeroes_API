@@ -37,7 +37,7 @@ function main(error, response, html){
         const name      = tab.text().trim().split('.').splice(1,5).join('');
         const link      = $(tab.find('a')[0]).attr('href');
         const img_link  = tab.find('img').attr('src')
-
+        console.log(base_url + link);
         request(base_url + link, extract);
     }
 }
@@ -59,18 +59,19 @@ function extract(error, response, html){
     for(let i=0; i<table.length; i++){
         // console.log($(table[i]).find('th').text());
         const key = $(table[i]).find('th').text().trim();
-
-        if(key == 'Super Name' || key =='Real Name' || key == 'Publisher' || key == 'Gender' 
-            || key == 'Character Type' || key == 'Birthday' || key =='Died'){
-            char[key] = $(table[i]).find('td').text().trim().split('\n')[0]
-        }else if(key == 'Aliases'){
-            char[key] = $($(table[i]).find('td').find('.aliases')[0]).text().replace(/\n/g, ', ')
-        }else if(key == "Creators"){
-            char[key] = $(table[i]).find('td').find('div[data-field="people"]').text().trim().replace(/^\s+|\s+$/gm,'').replace(/\n/g, ', ')
-        }else if(key == 'Powers'){
-            char[key] = $(table[i]).find('td').find('div[data-field="powers"]').text().trim().replace(/^\s+|\s+$/gm,'').replace(/\n/g, ', ')
-        }else{
-            char[$(table[i]).find('th').text().trim()] = $(table[i]).find('td').text().trim().replace(/\\n/g, '');
+        if(key){
+            if(key == 'Super Name' || key =='Real Name' || key == 'Publisher' || key == 'Gender' 
+                || key == 'Character Type' || key == 'Birthday' || key =='Died'){
+                char[key] = $(table[i]).find('td').text().trim().split('\n')[0]
+            }else if(key == 'Aliases'){
+                char[key] = $($(table[i]).find('td').find('.aliases')[0]).text().replace(/\n/g, ', ')
+            }else if(key == "Creators"){
+                char[key] = $(table[i]).find('td').find('div[data-field="people"]').text().trim().replace(/^\s+|\s+$/gm,'').replace(/\n/g, ', ')
+            }else if(key == 'Powers'){
+                char[key] = $(table[i]).find('td').find('div[data-field="powers"]').text().trim().replace(/^\s+|\s+$/gm,'').replace(/\n/g, ', ')
+            }else{
+                char[$(table[i]).find('th').text().trim()] = $(table[i]).find('td').text().trim().replace(/\\n/g, '');
+            }
         }
     }
 
