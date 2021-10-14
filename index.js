@@ -32,8 +32,8 @@ app.get('/get_marvel_movie', (req, res)=>{
             });
         if (actor_name)
             film = film.filter(e=>{
-                if(e.stars[0])
-                    return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
+                if(e.stars)
+                    return e.stars.toLowerCase().includes(actor_name.toLowerCase())
             });
         
         if (film.length == 0)
@@ -60,8 +60,8 @@ app.get('/get_dc_movie', (req, res)=>{
             });
         if (actor_name)
             film = film.filter(e=>{
-                if(e.stars[0])
-                    return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
+                if(e.stars)
+                    return e.stars.toLowerCase().includes(actor_name.toLowerCase())
             });
         
        
