@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
-const url = 'https://www.imdb.com/list/ls041927031/';
+const url = 'https://www.imdb.com/list/ls020636102/';
 const base_url = 'https://www.imdb.com/';
 
 request(url, main);
@@ -50,11 +50,12 @@ function get_movie_details(movie_element){
         
         stars = directors_and_stars[1].trim().split(":");
     
-        stars = stars.splice(1);
-        director  = director.splice(1);
+        stars = stars.splice(1).toString().replace(/\n/g, '');
+        director  = director.splice(1).toString().replace(/\n/g, '');
     } catch (error) {
         director = '';
         stars = '';
+        // console.log(error);
     }
     
     const movie_json = {
@@ -87,6 +88,7 @@ function make_JSON(movie_json){
         fs.writeFileSync(filePath, stringifyData);
     }
 }
+
 
 
 // console.log(movies);

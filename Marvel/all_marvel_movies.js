@@ -45,8 +45,8 @@ function get_movie_details(movie_element){
     
     let stars = directors_and_stars[1].trim().split(":");
   
-    stars = stars.splice(1);
-    director  = director.splice(1);
+    stars = stars.splice(1).toString().replace(/\n/g, '');
+    director  = director.splice(1).toString().replace(/\n/g, '');
     
     const movie_json = {
         "name" : movie_name,
