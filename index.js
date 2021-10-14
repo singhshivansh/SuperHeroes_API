@@ -64,6 +64,8 @@ app.get('/get_dc_movie', (req, res)=>{
                     return e.stars[0].toLowerCase().includes(actor_name.toLowerCase())
             });
         
+       
+        
         if (film.length == 0)
             res.send({"status" : "Sorry, we find nothing for you :("})
         else
@@ -71,6 +73,27 @@ app.get('/get_dc_movie', (req, res)=>{
     } catch (error) {
         res.send({"error" : error.message});
     }
+})
+
+//get random Marvel Movie
+app.get('/get_marvel_movie/random', (req, res)=>{
+    let films = mar;
+
+    const film = get_random(films);
+
+    res.send(film);
+})
+
+//get random DC Movie
+app.get('/get_dc_movie/random', (req, res)=>{
+    let films = dc;
+
+    let film = get_random(films);
+    while(film.year === 'ideo'){
+        film = get_random(films);
+    }
+
+    res.send(film);
 })
 
 //get Marvel Character API
@@ -106,7 +129,7 @@ app.get('/get_marvel_character', (req, res)=>{
     }
 })
 
-//get Marvel Character API
+//get DC Character API
 app.get('/get_dc_character', (req, res)=>{
     try {
         const body = req.query;
@@ -139,7 +162,28 @@ app.get('/get_dc_character', (req, res)=>{
     }
 })
 
+//get random Marvel Character
+app.get('/get_marvel_character/random', (req, res)=>{
+    let character = marvel_characters;
+    character = get_random(character);
+
+    return res.send(character);
+})
+
+//get random DC Character
+app.get('/get_dc_character/random', (req, res)=>{
+    let character = dc_characters;
+    character = get_random(character);
+
+    return res.send(character);
+})
+
 
 app.listen(process.env.PORT || 3000, ()=>{
     console.log(`Server Started at ${port}`);
 })
+
+// random function
+function get_random(list){
+    return list[Math.floor((Math.random()*list.length))];
+}
