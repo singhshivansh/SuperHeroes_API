@@ -10,29 +10,30 @@ const url       = 'https://comicvine.gamespot.com/profile/theoptimist/lists/top-
 
 //LINKS
 const links = [
+    'https://comicvine.gamespot.com/profile/theoptimist/lists/top-100-dc-characters/32198/',
     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-1/84843/',
     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-2/84855/',
     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-characters-part-3/84862/',
     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-4/84878/',
     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-5/84896/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-6/84959/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-7/84980/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-8/84984/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-9/84989/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-10/84992/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-11/85004/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-12/85089/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-13/85234/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-14/85240/',
-    'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-15/85247/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85311/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85390/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85430/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-17/85435/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-18/85444/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-19/85456/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-20/85472/',
-    // 'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-21/85743/'
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-6/84959/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-7/84980/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-8/84984/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-9/84989/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-10/84992/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-11/85004/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-12/85089/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-13/85234/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-14/85240/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-15/85247/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85311/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85390/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-16/85430/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-17/85435/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-18/85444/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-19/85456/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-20/85472/',
+//     'https://comicvine.gamespot.com/profile/brook78dc/lists/list-of-dc-characters-part-21/85743/'
 ]
 
 
