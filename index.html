@@ -16,12 +16,14 @@
 </style>
 
 <body>
-    <div class="bg-gray-300 flex py-5 justify-center">
-        <a class="text-5xl text-blue-600 font-semibold" href="/">SuperHero World! <small class="text-xl text-red-500 leading-10"><i>No API Key Required ;)</i></small></a>
+    <div class="bg-gray-200 flex py-5 justify-center">
+        <a class="text-4xl text-indigo-600 font-bold">Welcome to SuperHero API ! 
+            <small class="text-xl font-mono text-red-500 leading-10"><i>No API Key Required ;)</i></small>
+        </a>
     </div> 
 
     <div class="flex justify-center my-3">
-        <ul class="w-2/4 rounded-xl flex justify-around bg-gray-800 py-2">
+        <ul class="w-2/4 rounded-xl flex justify-around bg-gray-700 py-2">
             <li class="text-xl bg-gray-400 py-2 px-10 font-bold text-gray-700 rounded-xl cursor-pointer " id="movie_button" >Movie</li>
             <li class="text-xl bg-gray-400 py-2 px-10 font-bold text-gray-700 rounded-xl cursor-pointer" id="character_button">Characters</li>
         </ul>
@@ -35,7 +37,7 @@
                 <h5 class="text-2xl font-bold text-white ">Marvel</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="marvel_movie_button"></i></h5>
             </div>
-            <div class="py-2 px-3 my-3 w-5/12 bg-blue-600 mx-5 rounded flex justify-between shadow-2xl">
+            <div class="py-2 px-3 my-3 w-5/12 bg-indigo-600 mx-5 rounded flex justify-between shadow-2xl">
                 <h5 class="text-2xl font-bold text-white ">DC</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="dc_movie_button"></i></h5>
             </div>
@@ -95,7 +97,7 @@
         </div>
         <!-- DC Movie -->
         <div class="flex justify-center mt-5 " id="dc_movie" style="display: none;">
-            <div class="h-2/3 w-11/12 flex from-blue-700 bg-gradient-to-b  py-5 justify-center ">
+            <div class="h-2/3 w-11/12 flex from-indigo-700 bg-gradient-to-b  py-5 justify-center ">
                 <table class="w-full text-center mx-5 border-2 text-xl">
                     <thead>
                     <tr class="text-white">
@@ -106,7 +108,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="text-white bg-blue-500">
+                    <tr class="text-white bg-indigo-500">
                         <td>1</td>
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/</td>
                         <td class="border px-4 py-2">Returns All DC Movies</td>
@@ -114,7 +116,7 @@
                             <a href="https://superhero-world.herokuapp.com/get_dc_movie/" target="_blank" rel="noopener noreferrer">Click Here!</a>
                         </td>
                     </tr>
-                    <tr class="bg-blue-200">
+                    <tr class="bg-indigo-200">
                         <td>2</td>
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=batman</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Movie Name Query</b></td>
@@ -124,7 +126,7 @@
                             <a target="_blank" href="https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=man of steel">Click Here ('man of steel') </a>
                         </td>
                     </tr>
-                    <tr class="text-white bg-blue-500">
+                    <tr class="text-white bg-indigo-500">
                         <td>3</td>
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?actor_name=gal</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Actor Name Query</b></td>
@@ -134,7 +136,7 @@
                             <a target="_blank" href="https://superhero-world.herokuapp.com/get_dc_movie/?actor_name=heath">Click Here ('heath') </a>
                         </td>
                     </tr>
-                    <tr class="bg-blue-200">
+                    <tr class="bg-indigo-200">
                         <td>4</td>
                         <td class="border px-4 py-2">https://superhero-world.herokuapp.com/get_dc_movie/?movie_name=aquaman&actor_name=jason</td>
                         <td class="border px-4 py-2">Returns Movie according to <b>Movie Name Query</b> AND <b>Actor Name Query</b> </td>
@@ -153,14 +155,14 @@
     </div>
 
     <!-- Character API -->
-    <div class="h-auto w-100 from-gray-600 bg-gradient-to-bl mx-10 rounded-xl" id="character_tab" style="display: none;">
+    <div class="h-auto w-100 from-gray-600 bg-gradient-to-bl mx-10 pb-10 rounded-xl" id="character_tab" style="display: none;">
         <h3 class="text-4xl  w-100 text-white flex justify-center font-semibold">Character API</h3>
         <div class="flex justify-around">
             <div class="py-2 px-3 my-3 w-5/12 bg-red-500 mx-5 shadow-2xl rounded flex justify-between">
                 <h5 class="text-2xl font-bold text-white ">Marvel</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="marvel_character_button"></i></h5>
             </div>
-            <div class="py-2 px-3 my-3 w-5/12 bg-blue-600 shadow-2xl mx-5 rounded flex justify-between">
+            <div class="py-2 px-3 my-3 w-5/12 bg-indigo-600 shadow-2xl mx-5 rounded flex justify-between">
                 <h5 class="text-2xl font-bold text-white ">DC</h5>
                 <h5><i class="fa fa-plus fa-2x text-white cursor-pointer" id="dc_character_button"></i></h5>
             </div>
@@ -218,7 +220,7 @@
         </div>
         <!-- DC Character -->
         <div class="flex justify-center mt-5 " id="dc_character" style="display: none;">
-            <div class="h-2/3 w-11/12 flex from-blue-700 bg-gradient-to-b  py-5 justify-center ">
+            <div class="h-2/3 w-11/12 flex from-indigo-700 bg-gradient-to-b  py-5 justify-center ">
                 <table class="w-full mx-5 border-2 text-xl text-center">
                     <thead>
                     <tr class="text-white"> 
@@ -229,7 +231,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-white bg-blue-500">
+                        <tr class="text-white bg-indigo-500">
                             <td>1</td>
                             <td class="border px-4 py-2">http://superhero-world.herokuapp.com/get_dc_character/</td>
                             <td class="border px-4 py-2">Returns All DC Characters</td>
@@ -237,7 +239,7 @@
                                 <a href="http://superhero-world.herokuapp.com/get_dc_character" target="_blank" rel="noopener noreferrer">Click Here!</a>
                             </td>
                         </tr>
-                        <tr class="bg-blue-200">
+                        <tr class="bg-indigo-200">
                             <td>2</td>
                             <td class="border px-4 py-2">http://superhero-world.herokuapp.com/get_dc_character?name=iron man</td>
                             <td class="border px-4 py-2">
@@ -251,7 +253,7 @@
                                 <a target="_blank" href="http://superhero-world.herokuapp.com/get_dc_character?name=green">Click Here <small>(Incorrect Way)</small> </a>
                             </td>
                         </tr>
-                        <tr class="text-white bg-blue-500">
+                        <tr class="text-white bg-indigo-500">
                             <td>3</td>
                             <td class="border px-4 py-2">http://superhero-world.herokuapp.com/get_dc_character?name_contain=iron</td>
                             <td class="border px-4 py-2">
@@ -269,6 +271,31 @@
             
         </div>
     </div>
+
+    <footer class="h-32 w-full bg-gray-400 font-normal mt-3 text-gray-800  text-center grid" style="font-weight: 600;">
+        <p>
+            <ul>
+                <li>
+                    To see the code for this project, go to the 
+                    <a class="text-red-500  font-bold text-xl" target="_blank" href="https://github.com/singhshivansh/SuperHeroes_API">Github Repo</a> 
+                    - feel free to fork/clone the project for your own use.
+                </li>
+                <li class="">
+                    I hope you find it useful for your coding projects
+                </li>
+                
+                <li class="text-2xl pt-2">
+                    <a target="_blank" href="https://github.com/singhshivansh/"><i class="px-2 py-1 fab fa-github"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/_shivanshh__/"><i class="px-2 py-1 fab fa-instagram"></i></a>
+
+                    <!-- Project created by 
+                    <a class="text-indigo-700 font-bold text-xl" target="_blank" href="https://github.com/singhshivansh">Shivansh Singh</a> 
+                    - feel free to get in touch. -->
+                </li>
+            </ul>
+        </p>
+    </footer>
+
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -346,36 +373,6 @@
         dc_movie.show(500);
     }
 
-
-    // function toggle_movie(comp){
-    //     // dc_movie.toggle(500);
-    //     // marvel_movie.toggle(500);
-    //     if(comp == 'dc'){
-    //         if(dc_movie_button.hasClass('fa-plus')){
-    //             dc_movie_button.removeClass('fa-plus');
-    //             dc_movie_button.addClass('fa-minus');
-    //             dc_movie.show(600);
-    //         }else{
-    //             dc_movie_button.addClass('fa-plus');
-    //             dc_movie_button.removeClass('fa-minus');
-    //             dc_movie.hide(600);
-    //         }
-    //         marvel_movie.hide(600);
-    //     }else if(comp == 'marvel'){
-    //         if(marvel_movie_button.hasClass('fa-plus')){
-    //             marvel_movie_button.removeClass('fa-plus');
-    //             marvel_movie_button.addClass('fa-minus');
-    //             marvel_movie.show(600);
-    //         }else{
-    //             marvel_movie_button.addClass('fa-plus');
-    //             marvel_movie_button.removeClass('fa-minus');
-    //             marvel_movie.hide(600);
-    //         }
-    //         dc_movie.hide(600);
-    //     }
-
-        // console.log(marvel_movie_button.toggleClass)
-    // }
     
     $(document).ready(()=>{
         marvel_movie_open();
@@ -442,36 +439,6 @@
         marvel_character.hide(500);
         dc_character.show(500);
     }
-
-
-    // function toggle_movie(comp){
-    //     // dc_movie.toggle(500);
-    //     // marvel_movie.toggle(500);
-    //     if(comp == 'dc'){
-    //         if(dc_character_button.hasClass('fa-plus')){
-    //             dc_character_button.removeClass('fa-plus');
-    //             dc_character_button.addClass('fa-minus');
-    //             dc_character.show(600);
-    //         }else{
-    //             dc_character_button.addClass('fa-plus');
-    //             dc_character_button.removeClass('fa-minus');
-    //             dc_character.hide(600);
-    //         }
-    //         marvel_character.hide(600);
-    //     }else if(comp == 'marvel'){
-    //         if(marvel_character_button.hasClass('fa-plus')){
-    //             marvel_character_button.removeClass('fa-plus');
-    //             marvel_character_button.addClass('fa-minus');
-    //             marvel_character.show(600);
-    //         }else{
-    //             marvel_character_button.addClass('fa-plus');
-    //             marvel_character_button.removeClass('fa-minus');
-    //             marvel_character.hide(600);
-    //         }
-    //         dc_character.hide(600);
-    //     }
-    //     // console.log(marvel_movie_button.toggleClass)
-    // }
 </script>
 
 
