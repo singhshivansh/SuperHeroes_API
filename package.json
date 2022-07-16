@@ -11,12 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.13",
     "request": "^2.88.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/singhshivansh/SuperHeroes_API.git"

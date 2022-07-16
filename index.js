@@ -1,7 +1,7 @@
 const express   = require('express');
 const path      = require('path');
 const app       = express();
-const port      = process.env.PORT || 3000;
+const port      = process.env.PORT || 5000;
 const fs        = require('fs');
 
 const mar       = require('./Marvel/All Marvel Movies.json');               // MARVEL JSON file
@@ -11,7 +11,9 @@ const marvel_characters = require('./Marvel/All Marvel Characters.json');   //MA
 const dc_characters     = require('./DC/All DC Characters.json');           //DC Characters File
 const _         = require('lodash');
 const { re }    = require('semver');
+const cors = require('cors');
 
+app.use(cors());
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname+'/index.html'));
@@ -179,7 +181,7 @@ app.get('/get_dc_character/random', (req, res)=>{
 })
 
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT || 5000, ()=>{
     console.log(`Server Started at ${port}`);
 })
 
