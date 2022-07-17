@@ -15,6 +15,16 @@ const cors = require('cors');
 
 app.use(cors());
 
+// const { createProxyMiddleware } = require('http-proxy-middleware');
+// app.use('/api', createProxyMiddleware({ 
+//     target: 'http://localhost:3000/', //original url
+//     changeOrigin: true, 
+//     //secure: false,
+//     onProxyRes: function (proxyRes, req, res) {
+//        proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+//     }
+// }));
+
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname+'/index.html'));
 })
